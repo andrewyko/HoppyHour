@@ -1,0 +1,178 @@
+/*height and width on the container of the map (the div) is required of the map won't show up. */
+#map {
+	height: 400px;
+  width: 100%;
+}
+#content {
+    margin-top: 100px;
+    text-align: center;
+}
+
+#breweryInfo {
+	display: none;
+}
+
+#breweryReview p {
+	border-style: solid;
+	border-width: 1px;
+	border-color: black;
+	padding: 5px 50px;
+	width: 200px;
+    margin-left: 80px;
+    margin-top: 20px;
+    margin: 10px auto;
+}
+
+#starRating {
+  margin-left: 124px;
+  margin: 10px auto;
+}
+
+.starReview {
+  margin-left: 124px;
+  margin: 10px auto;
+}
+
+/***** CSS for index.html *****/
+
+#nav {
+  background: #3d3c3c;
+}
+.navbar-inverse .navbar-brand {
+  color: #ffffff;
+}
+.navbar-inverse .navbar-nav>li>a {
+  color: #ffffff;
+}
+body {
+  font-family: Roboto;
+}
+h1,h2{
+  font-family: Copperplate Gothic Light;
+  color: black;
+}
+p{
+  color: black;
+}
+.jumbotron {
+  background: #ffffff;
+}
+.panel-default>.panel-heading {
+  background: #ffffff;
+}
+div.panel.panel-default{
+  padding: 10px;
+}
+#breweryName{
+  color: black;
+}
+#searchH2{
+  color: black;
+}
+.footer{
+  color: white;
+  height: 43px;
+  background: #3d3c3c;
+  padding: 12px;
+  margin-top: 20px;
+  text-align:center;
+}
+
+/***** CSS for about.html *****/
+
+.container {
+  position: relative; 
+}
+.box {
+  padding-bottom: 20px;
+}
+.textarea {
+  padding-top: 30px;
+}
+.image {
+  display: block;
+  width: 75%;
+  height: auto;
+}
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: black;
+  overflow: hidden;
+  width: 0;
+  height: 15%;
+  transition: .4s ease;
+}
+.container:hover .overlay {
+  width: 77%;
+}
+.text {
+  white-space: nowrap; 
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+p.footer{
+  color: white;
+}
+#bottom{
+  margin-bottom: 25px;
+}
+
+/***** CSS for about.html *****/
+
+.content2 {
+  margin-top: 100;
+  text-align: center;
+}
+
+
+/***** Media Queries *****/
+
+@media only screen and (max-width: 1200px) {
+    #initialInfo{
+      width: 100%;
+    }
+    #breweryInfo {
+    display: none;
+    width: 100%;
+    }
+    .jumbotron{
+    width: 100%;
+    }
+@media only screen and (max-width: 980px) {
+    #initialInfo{
+      width: 100%;
+    }
+    #breweryInfo {
+    display: none;
+    width: 100%;
+    }
+@media only screen and (max-width: 768px) {
+    #initialInfo{
+      width: 100%;
+    }
+    #breweryInfo {
+    display: none;
+    width: 100%;
+    }
+    .col-sm-9 {
+    /* width: 46%; */
+    margin: auto;
+    }
+    @media only screen and (max-width: 640px) {
+    #initialInfo{
+      width: 100%;
+    }
+    #breweryInfo {
+    display: none;
+    width: 100%;
+    }
