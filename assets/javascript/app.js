@@ -1,6 +1,5 @@
 var config = {
   // Initialize Firebase
-  var config = {
     apiKey: "AIzaSyAHg6k5_WoMsK4BHqQoI_MfsBZsvsVUe0A",
     authDomain: "hoppyhour-c711e.firebaseapp.com",
     databaseURL: "https://hoppyhour-c711e.firebaseio.com",
@@ -37,7 +36,7 @@ $("#locationBtn").on("click",function(event){
     city = $("#city").val().trim();
     state = $("#state").val().trim();
 
-    var googleURL = "https://maps.googleapis.com/maps/api/geocode/json?address=" + city + "," + state + "&key=AIzaSyAL1B97DDVFjIxxJ1MiQdM6GY68WmrSaRo"
+    var googleURL = "https://maps.googleapis.com/maps/api/geocode/json?address=" + city + "," + state + "&key=AIzaSyBTQTgX1PRrBDe6d4GTKW6_3Bs5t2a5wZ0"
 
     $.ajax({
         url: googleURL,
