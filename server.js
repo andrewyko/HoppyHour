@@ -9,6 +9,9 @@ var PORT = process.env.PORT || 3000;
 // define the path to use style sheets & images - public folder
 app.use(express.static(path.join(__dirname, '/public')));
 
+app.use(express.static('.'));
+app.use(express.static('assets'));
+
 app.use(cors());
 app.options('*', cors());
 

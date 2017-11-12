@@ -16,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/andrewyko/HoppyHour/issues"
   },
-  "homepage": "https://github.com/andrewyko/HoppyHour#readme"
+  "homepage": "https://github.com/andrewyko/HoppyHour#readme",
+  "dependencies": {
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "request": "^2.83.0"
+  }
 }
