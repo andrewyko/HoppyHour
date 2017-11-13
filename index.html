@@ -1,118 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <meta name="author" content="">
 
-    <title>Welcome to Hoppy Hour!</title>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<meta name="description" content="">
+	<meta name="author" content="">
 
+	<title>Welcome to Hoppy Hour!</title>
 
-    <!-- JQuery -->
-    <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">
+	<!-- CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" />
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
-    <!-- Bootstrap core CSS -->
-    <script src="https://use.fontawesome.com/3fc219a692.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<!-- JS -->
+	<script src="https://use.fontawesome.com/3fc219a692.js"></script>
+	<script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/4.1.1/firebase.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.2/moment.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+	<script src="assets/javascript/app.js"></script>
+</head>
 
-    <!-- Custom CSS Styles -->
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">  
-    
-  </head>
-
-  <body>
-    <nav id="nav" class="navbar navbar-fixed-top navbar-inverse">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+<body>
+	<nav id="nav" class="navbar navbar-fixed-top navbar-inverse">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.html">Hoppy Hour</a>
-        </div>
-        <div id="navbar" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </div><!-- /.nav-collapse -->
-      </div><!-- /.container -->
-    </nav><!-- /.navbar -->
+				<a class="navbar-brand" href="index.html">Hoppy Hour</a>
+			</div>
+			<div id="navbar" class="collapse navbar-collapse">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="index.html">Home</a></li>
+					<li><a href="about.html">About</a></li>
+					<li><a href="contact.html">Contact</a></li>
+				</ul>
+			</div>
+			<!-- /.nav-collapse -->
+		</div>
+		<!-- /.container -->
+	</nav>
+	<!-- /.navbar -->
 
-    <div class="container">
-      <div id="content" class="row row-offcanvas row-offcanvas-right">
-        <div class="col-lg-12 col-sm-12">
-          <p class="pull-right visible-xs">
-            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
-          </p>
-          <div class="jumbotron">
-            <h1>Welcome to Hoppy Hour!</h1>
-            <p>Look no further for your weekend adventures. Having trouble finding the nearest brewery near you? Search for one close to you by putting in your city location in the search bar below!</p>
-          </div>
-          <div class="row">
-             <div class="col-lg-8">
-              <div class="panel panel-default">
-                <div id="heading1" class="panel-heading"> 
-                  <form class="navbar-form navbar-left" role="search">
-                  <div class="form-group">
-                    <input type="text" class="form-control" id="city" placeholder="City">
-                    <input type="text" class="form-control" id="state" placeholder="State">
-                  </div>
-                  <button type="submit" class="btn btn-default" id="locationBtn">Submit
+	<div class="container">
+		<div id="content" class="row row-offcanvas row-offcanvas-right">
+			<div class="col-lg-12 col-sm-12">
+				<p class="pull-right visible-xs">
+					<button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
+				</p>
+				<div class="jumbotron">
+					<h1>Welcome to Hoppy Hour!</h1>
+					<p>Look no further for your weekend adventures. Having trouble finding the nearest brewery near you? Search for one close to you by putting in your city location in the search bar below!</p>
+				</div>
+				<div class="row">
+					<div class="col-lg-8">
+						<div class="panel panel-default">
+							<div id="heading1" class="panel-heading">
+								<form class="navbar-form navbar-left" role="search">
+									<div class="form-group">
+										<input type="text" class="form-control" id="city" placeholder="City">
+										<input type="text" class="form-control" id="state" placeholder="State">
+									</div>
+									<button type="submit" class="btn btn-default" id="locationBtn">Submit
                   </button>
-                  </form>   
-                  <div id="map">
-                  </div>
-                </div>
-              </div>
-            </div> 
-            <div class="col-xs-6 col-lg-4" id = "initialInfo">
-              <div class="panel panel-default">
-              <h2 id="searchH2">Search your City and State</h2>
-              <p>We will display the nearest breweries in your city within a 10 mile radius! </p>
-              </div>  
-          </div><!--/row-->
-          <div class="col-xs-6 col-lg-4" id = "breweryInfo">
-           <div class="panel panel-default" >              
-            <div id = "breweryName"></div>
-            <form>
-              <div class="form-group">
-                <div id = "starRating"></div>
-                <p>Write a Review</p>
-                <textarea class="form-control" rows = "3" id="reviewText"></textarea>
-                <input id = "reviewBtn" type = "submit" value = "Submit">
-              </div>
-            </form>
-            <div  id ="breweryReview" style="overflow:scroll; height:287px;"></div>
-            </div>
-            </div><!--Panel body-->
-          </div><!--/row-->
-        </div><!--/.col-xs-12.col-sm-9-->
-      </div><!--/row-->
-    </div><!--/.container-->
+								</form>
+								<div id="map">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-6 col-lg-4" id="initialInfo">
+						<div class="panel panel-default">
+							<h2 id="searchH2">Search your City and State</h2>
+							<p>We will display the nearest breweries in your city within a 10 mile radius! </p>
+						</div>
+					</div>
+					<!--/row-->
+					<div class="col-xs-6 col-lg-4" id="breweryInfo">
+						<div class="panel panel-default">
+							<div id="breweryName"></div>
+							<form>
+								<div class="form-group">
+									<div id="starRating"></div>
+									<p>Write a Review</p>
+									<textarea class="form-control" rows="3" id="reviewText"></textarea>
+									<input id="reviewBtn" type="submit" value="Submit">
+								</div>
+							</form>
+							<div id="breweryReview" style="overflow:scroll; height:287px;"></div>
+						</div>
+					</div>
+					<!--Panel body-->
+				</div>
+				<!--/row-->
+			</div>
+			<!--/.col-xs-12.col-sm-9-->
+		</div>
+		<!--/row-->
+	</div>
+	<!--/.container-->
 
-      <footer>
-        <p class="footer">Hoppy Hour 2017 J Davis | Andie | Andrew</p>
-      </footer>
-    
-    <!-- Scripts -->
-      <!-- Firebase -->
-      <script src="https://www.gstatic.com/firebasejs/4.1.1/firebase.js"></script>
-      <!-- Google Maps -->
-      <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAL1B97DDVFjIxxJ1MiQdM6GY68WmrSaRo&callback=initMap"></script>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
-      <!-- Custom Javascript -->
-      <script src="assets/javascript/app.js"></script>
+	<footer>
+		<p class="footer">Hoppy Hour 2017 J Davis | Andie | Andrew</p>
+	</footer>
+	<!-- Google Maps -->
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAL1B97DDVFjIxxJ1MiQdM6GY68WmrSaRo&callback=initMap"></script>
+</body>
 
-  </body>
 </html>
