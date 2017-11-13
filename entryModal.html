@@ -1,0 +1,78 @@
+<div id="ageVerification" class="modal fade">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title">Age Verification</h4>
+			</div>
+			<div class="modal-body">
+				<p>Please enter your date of birth to verify that you are over 21.</p>
+				<div class="form-group">
+					<div class='input-group date' id='datepicker'>
+						<input type='text' class="form-control" />
+						<span class="input-group-addon">
+                        	<span class="glyphicon glyphicon-calendar"></span>
+						</span>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Get me outta here!</button>
+				<button id="confirmAge" type="button" class="btn btn-primary" disabled>Yes, I am over 21</button>
+			</div>
+		</div>
+	</div>
+	<script type="application/javascript">
+		$(function() {
+			$("#ageVerification").modal('show');
+			var dp = $('#datepicker').datetimepicker({
+				format: 'L'
+			});
+			dp.on("dp.change", function(e) {
+				var isUnderAge = e.date.add(21, 'y').isAfter(moment());
+				$('#ageVerification #confirmAge').prop('disabled', isUnderAge);
+			});
+			$('#ageVerification').on('click', '#confirmAge:enabled', function() {
+				$("#ageVerification").modal('hide');
+				$("#tasteProfile").modal('show');
+			});
+		});
+
+	</script>
+</div>
+<div id="tasteProfile" class="modal fade">
+	<div class="modal-dialog">
+		<form class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title">Taste Profile</h4>
+			</div>
+			<div class="modal-body">
+				<p>Please fill out your taste profile your best matches.</p>
+				<div class="form-group">
+					<label>Question1 Here</label>
+					<input type="text" name="question1" />
+				</div>
+				<div class="form-group">
+					<label>Question2 Here</label>
+					<input type="text" name="question2" />
+				</div>
+			</div>
+			<div class="modal-footer">
+				<input type="submit" class="btn btn-default btn-primary" value="Find My Matches!" />
+			</div>
+		</form>
+	</div>
+	<script type="application/javascript">
+		$(function() {
+			$('#tasteProfile form').submit(function(e) {
+				e.preventDefault();
+				var data = $('#tasteProfile form').serializeArray();
+				console.dir(data);
+				$.post("/api/tasteProfile", data, loadProfile); //TODO: Create 'global' function "loadProfile" in app.js to handle profile results
+				$("#tasteProfile").modal('hide');
+			});
+		});
+
+	</script>
+</div>
