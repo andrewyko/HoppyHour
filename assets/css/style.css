@@ -15,7 +15,7 @@
 #breweryReview p {
 	border-style: solid;
 	border-width: 1px;
-	border-color: red;
+	border-color: black;
 	padding: 5px 50px;
 	width: 200px;
     margin-left: 80px;
@@ -43,9 +43,6 @@
 }
 .navbar-inverse .navbar-nav>li>a {
   color: #ffffff;
-}
-body {
-  font-family: Roboto;
 }
 h1,h2{
   font-family: Copperplate Gothic Light;
@@ -133,6 +130,20 @@ p.footer{
   margin-top: 100;
   text-align: center;
 }
+
+/***** CSS for contact.html ****/
+#contactlabel {
+  clear: both;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+#contactsubmit {
+  clear: both;
+  margin-left: 15px;
+}
+
+
 
 
 /***** Media Queries *****/

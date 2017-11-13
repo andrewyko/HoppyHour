@@ -80,7 +80,8 @@ function processBreweryLocationsData(promise) {
                 },
 
                 name: results[i].brewery.name,
-                url: results[i].brewery.website
+                url: results[i].brewery.website,
+                address: results[i].brewery.formatted_address
             };
         };
         initMap();
@@ -103,7 +104,8 @@ function initMap(locations) {
             url: dataset.url,
             name: dataset.name,
             phone: dataset.phone,
-            image: dataset.icon
+            image: dataset.icon,
+            address: dataset.formatted_address
         });
         return marker
     }
@@ -136,7 +138,7 @@ function initMap(locations) {
                 currentMarkerId = JSON.stringify(e.latLng.lat() + e.latLng.lng()).replace(".", "?");
                 
                 $("#breweryReview").empty();
-                $("#breweryName").html(marker.name + "<br>" + "<a href=\"" + marker.url + "\"" + "target=\"_blank\"" + ">" + marker.url + "</a>" + "<br>" + marker.image);
+                $("#breweryName").html(marker.name + "<br>" + "<a href=\"" + marker.url + "\"" + "target=\"_blank\"" + ">" + marker.url + "</a>" + "<br>" + marker.formatted_address);
                 $("#initialInfo").css({
                     "display": "none"
                 });
